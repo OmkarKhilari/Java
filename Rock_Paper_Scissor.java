@@ -7,7 +7,6 @@ public class Rock_Paper_Scissor {
 
         System.out.println("==============ROCK PAPER SCISSOR==============");
         // |0 == paper|1 == stone|2 == scissors|
-        int rand1 = random.nextInt(3);
 
         System.out.print("Enter number of chances : ");
         int chances = sc.nextInt();
@@ -16,8 +15,10 @@ public class Rock_Paper_Scissor {
 
         System.out.println("Reference:|0 == paper|1 == stone|2 == scissors| \n");
         while((--x) != 0) {
+            
             System.out.print("Enter 0/1/2 : ");
-            int choice = sc.nextInt();
+             int rand1 = random.nextInt(3);
+             int choice = sc.nextInt();
                 if(rand1 == 0) {
                     switch (choice) {
                         case 0 -> {
