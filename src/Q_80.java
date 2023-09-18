@@ -1,44 +1,41 @@
+import java.util.ArrayList;
+
 public class Q_80 {
     public static void main(String[] args) {
-        int[] nums = {0,0,0,0,0,0,0,0,1,1,1,1,2,3,3,4,4,4,4,4,4,4,4,4,4,4,5,5,5,5,5,5,5,5,5,5,5,5,5,5,6,6};
+        int[] nums = {0,0,0,0,0,0,0,0,1,1,1,1,2,3,3,4,4,4,4,4,4,4,4,4,4,4,5,5,5,5};
         int[] nums2 = {1,1,1,2,2,3};
 
         System.out.println(removeDuplicates(nums));
     }
 
     static int removeDuplicates(int[] nums) {
-        int now = nums[0];
-        int count = 0;
+
         int duplicate = 0;
+        ArrayList<Integer> list = new ArrayList<>();
+        list.add(nums[0]);
 
         for (int i = 1; i < nums.length;) {
-            if (nums[i] == now && duplicate == 0) {
-                duplicate++;
-                if (i == nums.length-1) {
-                    break;
-                } else {
-                    i++;
-                }
-                continue;
-            }
+            if (duplicate == 0 && nums[i] == nums[i-1]) {
+                list.add(nums[i]);
 
-            if (nums[i] == now) {
-                nums[i] = Integer.MAX_VALUE;
+                duplicate++;
                 i++;
-                count++;
-            } else if (nums[i] != Integer.MAX_VALUE){
-                now = nums[i];
+                continue;
+            } else if (!list.contains(nums[i])) {
+                list.add(nums[i]);
                 duplicate = 0;
                 i++;
-            }
-            else {
+            } else {
                 i++;
             }
         }
 
-        quickSort(nums,0,nums.length-1);
+        int i =0;
+        for(Integer x : list) {
+            nums[i++] = x;
+        }
 
-        return nums.length - count;
+        return list.size();
     }
 
 
