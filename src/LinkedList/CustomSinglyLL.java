@@ -1,13 +1,13 @@
 package LinkedList;
 
-public class CustomLL {
+public class CustomSinglyLL {
 
     private Node head;
     private Node tail;
 
     private int size;
 
-    public CustomLL() {
+    public CustomSinglyLL() {
         this.size = 0;
     }
 
