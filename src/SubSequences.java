@@ -3,7 +3,8 @@ import java.util.ArrayList;
 public class SubSequences {
     public static void main(String[] args) {
 //        subSeqAL("", "Omkar", new ArrayList<>());
-        System.out.println(subSeqALInside("", "Omkar"));
+        ArrayList<String> list = new ArrayList<>();
+        System.out.println(subSeqAL("", "gfg",list));
     }
 
     static void subSeq(String p, String up) {
@@ -19,7 +20,7 @@ public class SubSequences {
         subSeq(p, up.substring(1));
     }
 
-    static ArrayList<String> subSeqAL(String p, String up, ArrayList<String> list) {
+        static ArrayList<String> subSeqAL(String p, String up, ArrayList<String> list) {
         if(up.isEmpty()) {
 //            System.out.println(p);
             list.add(p);
